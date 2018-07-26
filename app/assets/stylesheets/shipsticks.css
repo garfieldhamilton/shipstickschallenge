@@ -1,0 +1,143 @@
+body {
+	font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        line-height: 1.42857143;
+        color: #252525;
+        background-color: #fff;
+}
+
+.v2-logo {
+    width: 180px;
+    margin-top: -11px;
+    margin-bottom: 7px;
+    margin-left: -10px;
+    max-width: 180px !important;
+    padding: 7px 10px;
+    max-width: 180px !important;
+}
+
+#ship-header {
+	padding: 38px 0 10px 0;
+        padding-top: 38px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+}
+#ship-header .ship-logo-text {
+	color: #4fab55;
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 12px;
+}
+.ship-point-heading {
+       	font-weight: 700;
+        margin-bottom: 17px;
+        margin-top: 6.5px;
+        margin-bottom: 14px;
+}
+.medium-icon {
+	width: 20px;
+        height: 27px;
+        margin-right: 5px;
+        margin-left: 0px;
+}
+            
+	.heading-font-size, .login-registration-madal .btn-facebook, .login-registration-madal .sign-in-button, .login-registration-madal #register-submit, .login-registration-madal #user_submit, .login-registration-madal .nav-tabs li a, .ship-point-heading, #travelers .block-title, #travelers .product-title, .additional-traver-button-row h4, .service-option-section #service-options-placeholder .radio .radio-label, .service-option-section #return_pickup_service .radio .radio-label, #payment .radio-label, .payment-heading h4, .order-summery-text {
+                font-size: 22px;
+}
+.ship-point-btn img {
+	width: 16px;
+        height: 13px;
+        margin-right: 8px;
+        margin-left: 0px;
+}
+.form-group label {
+	line-height: 0.9;
+        color: #252525;
+        font-weight: 600;
+        margin-bottom: 10px;
+}
+.bg-grey {
+	background-color: whitesmoke;
+}
+.bg-white {
+	background-color: #ffffff;
+}
+.space-small, hr {
+	margin-top: 22px;
+        margin-bottom: 0px;
+        border: 0;
+        border-top: 1px solid #a8a8a8;
+}
+#travelers .product-title img {
+	width: 15px;
+        height: 25px;
+        margin-right: 8px;
+        margin-left: 0px;
+}
+.plus-icon {
+	height: 15px;
+        width: 15px;
+}
+            
+.item-counter-box {
+	width:100px;
+        padding:5px;
+        border:1px solid #dddddd;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center
+}
+            
+.item-counter-box .item-counter-value {
+	font-size:16pt;
+        color: gray 
+}
+.item-counter-box div {
+	cursor: pointer;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+            
+@media (min-width: 1200px)
+{
+	.from-section, .to-section {
+        	width: 46.2%;
+        }
+        .from-section, .to-section {
+        	padding-bottom: 5px;
+        }
+}
+#ship-points-divider {
+	width: 7.6% !important;
+}
+
+.shipping-dropoff-form {
+	display : flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.nav.navbar-nav li a:not(.btn), nav #number a {
+    font-family: "proxima-nova", sans-serif !important;
+}
+.nav.navbar-nav li a:not(.btn), nav #number a {
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Source Sans Pro" !important;
+}
+.nav-icon {
+    width: 10px;
+    height: 13px;
+    margin-right: 9px;
+    margin-left: 0px;
+}

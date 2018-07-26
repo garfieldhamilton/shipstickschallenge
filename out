@@ -1,0 +1,20 @@
+..............F....
+
+RSpec is shutting down and will print the summary report... Interrupt again to force quit.
+
+Failures:
+
+  1) Products API POST /products when the request is invalid returns status code 422
+     Failure/Error: expect(response).to have_http_status(422)
+       expected the response to have status code 422 but it was 500
+     # ./spec/requests/products_spec.rb:74:in `block (4 levels) in <main>'
+     # ./spec/rails_helper.rb:67:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:66:in `block (2 levels) in <top (required)>'
+
+Finished in 0.38382 seconds (files took 0.89249 seconds to load)
+19 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/requests/products_spec.rb:73 # Products API POST /products when the request is invalid returns status code 422
+
