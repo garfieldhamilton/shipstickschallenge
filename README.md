@@ -82,7 +82,7 @@ If any parameters are missing it wil fail with the following error. The server a
 }
 ```
 
-the server actually returns a 500 error code instead of the 422. There is a params.require guard that will raise an exception if a parameter is missing. That will trigger and send the 422, but the 500 is raised somewhere else in the framework. Its attempting to serialize a Null value.
+the server actually returns a 500 error code instead of the 422. There is a params.require guard that will raise an exception if a parameter is missing. That will trigger and send the 422, but the 500 is raised somewhere else in the framework. Its attempting to serialize a Null value. https://github.com/rails-api/active_model_serializers/issues/2024
 ```
 [active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
 Completed 500 Internal Server Error in 4ms (Views: 3.7ms)
