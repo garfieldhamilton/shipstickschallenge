@@ -17,7 +17,7 @@ The REST API is implemented using Rails routes resources helper, so it specifies
 The call examples are from Postman. You could send the parameters up as JSON in the request body as well.
 
 ### Returning All Products
-- GET http://34.206.71.17/products 
+- GET http://34.206.71.174/products 
 
 Note that when we return the objects we don't return the MongoDB ObjectID reference in order to not have a database dependency in the front end code. 
 
