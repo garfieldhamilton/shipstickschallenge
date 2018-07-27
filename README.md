@@ -57,7 +57,7 @@ an invalid ID will return a 404 error code
 ```
 
 ### Returning a product that fits a particular dimension
-- GET http://34.206.71.174//products?length=48&width=14&height=12&weight=42 
+- GET http://34.206.71.174/products?length=48&width=14&height=12&weight=42 
 
 all 4 fields: length, width, height and weight are required. it will return the smallest package that can contain those dimensions.
 ```
