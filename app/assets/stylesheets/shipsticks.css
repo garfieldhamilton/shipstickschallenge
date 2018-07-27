@@ -5,6 +5,9 @@ body {
         color: #252525;
         background-color: #fff;
 }
+.hidden {
+	display: none;
+}
 
 .v2-logo {
     width: 180px;
@@ -23,6 +26,7 @@ body {
         padding-bottom: 10px;
         padding-left: 0px;
 }
+
 #ship-header .ship-logo-text {
 	color: #4fab55;
         font-size: 32px;
@@ -35,6 +39,30 @@ body {
         margin-top: 6.5px;
         margin-bottom: 14px;
 }
+
+#custom-bag-header {
+        padding: 50px 0 10px 0;
+        padding-top: 50px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        padding-left: 0px;
+}
+
+#custom-bag-header .bag-logo-text {
+        color: #4fab55;
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: 12px;
+}
+.custom-bag-heading {
+        font-weight: 700;
+        margin-bottom: 17px;
+        margin-top: 6.5px;
+        margin-bottom: 14px;
+}
+
+
+
 .medium-icon {
 	width: 20px;
         height: 27px;
@@ -141,3 +169,54 @@ body {
     margin-right: 9px;
     margin-left: 0px;
 }
+
+.large-submit-btn {
+    color: white !important;
+    background-color: #5fd063 !important;
+    border-color: #5fd063 !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 3px 0px 0px #4fab55;
+    padding: 14px 0px;
+    width: 280px;
+    font-size: 26px;
+    box-shadow: 0px 3px 0px 0px #4fab55;
+}
+
+.calculator-modal .close {
+    color: #252525;
+    font-size: 18px;
+    margin: 0px; 
+}
+
+.medium-submit-btn {
+    color: white !important;
+    background-color: #5fd063 !important;
+    border-color: #5fd063 !important;
+    border-radius: 3px !important;
+    box-shadow: 0px 3px 0px 0px #4fab55;
+    padding: 7px 0px;
+    width: 280px;
+    font-size: 18px;
+    box-shadow: 0px 3px 0px 0px #4fab55;
+}
+.modal-title {
+    border: none !important;
+    color: #4fab55;
+    font-weight: 600;
+}
+
+.calculator-alert {
+    width:100%;
+    height:25px;
+    font-weight:bold;
+    color:red;
+    display:flex;
+    flex-directon:row;
+    justify-content:center;
+}
+.selected-packaging {
+   font-weight:bold;
+   font-size:14pt;
+   color:#4fab55;
+}	
+

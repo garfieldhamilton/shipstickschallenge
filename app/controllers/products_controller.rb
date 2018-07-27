@@ -160,12 +160,14 @@ class ProductsController < ApplicationController
 		product = Product.find_by(id: product_id)
 		if !product.nil?
 			attributes=product.attributes
-			params.each do |field_name|
+			new_attributes={}
+			params.keys.each do |field_name|
 				if attributes.has_key? field_name.to_s
-					attributes[param] = params[field_name]
+					new_attributes[field_name.to_s] = params[field_name]
 				end
-				product.update_attributes attributes
 			end
+			Rails.logger.debug(sprintf("UPDATE setting: %s",new_attributes.to_json))
+			product.update_attributes! new_attributes
 			head :no_content
 		else
 			render json: {error: 'Record Not Found'}, status: :not_found
