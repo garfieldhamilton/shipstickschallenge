@@ -8,7 +8,7 @@ Rails+MongoDB implementation of a simple shipsticks API + front end
 - Api is hosted at http://34.206.71.174/products
 - Ruby version is 2.5.1p57 and Rails version is 5.2.0
 - Nginx runs as a proxy to a Puma instance
-- Mongo DB 3.4.16 is installed and running.
+- Mongo DB 3.4.16 is installed and running. The database is populated using a db/seeds.rb script that loads the products.json file located in lib/seeds/products.json
 
 ## The API
 
