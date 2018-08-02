@@ -11,7 +11,7 @@ if(File.exists? product_file_path)
 			products.each do |product|
 
 
-				dbproduct = Product.find_by({name: product["name"]})
+				dbproduct = Product.find_by(name: product["name"])
 				
 				if(dbproduct.nil?)
 					dbproduct = Product.new({
