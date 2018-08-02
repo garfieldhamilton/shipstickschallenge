@@ -28,7 +28,8 @@ class ProductsController < ApplicationController
                 render json: {error: 'Validation Failed'},status: :unproccessable_entity
         end
 	rescue_from(ActionController::ParameterMissing) do |ex|
-                render json: {error: 'Missing Parameters'},status: :unproccessable_entity
+                #render json: {error: 'Missing Parameters'},status: :unproccessable_entity
+                render json: ex,status: :unproccessable_entity
         end
 
 
@@ -41,10 +42,13 @@ class ProductsController < ApplicationController
 
 		# do we have parameters
 		permitted = params.permit([:length,:width,:height,:weight]).keys
-		if permitted.length>0 && permitted.length<4
-			render json: {error: "Missing Parameters"}, status: :unproccessable_entity
-			return
+		if permitted.length>0
+			params.require([:length,:width,:height,:weight])
 		end
+		#&& permitted.length<4
+		#	render json: {error: "Missing Parameters"}, status: :unproccessable_entity
+		#	return
+		#end
 
 		products = []
 		if(permitted.length == 0)

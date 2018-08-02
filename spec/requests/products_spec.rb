@@ -13,7 +13,7 @@ RSpec.describe 'Products API',type: :request do
 
 		it 'returns products'  do
 			expect(json).not_to be_empty
-			expect(json.size).to eq(10)
+			expect(json.size).to be > 0
 		end
 		
 		it 'returns status code 200' do
@@ -50,6 +50,32 @@ RSpec.describe 'Products API',type: :request do
 
 		end
 	end
+	
+	# test GET /products [length,width,height,weight]
+	describe 'Get /products with length,width,height,weight' do 
+		before { get '/products', params: record }
+			
+		context 'retrieving a matching record' do
+			let(:record) {{length:48,width:14,height:12,weight:42}}
+
+			it 'returns a product' do
+				expect(json).not_to be_empty
+				expect(json.size).to be>0
+				expect(json[0]['name']).to match(/Small/)
+			end
+
+			it 'returns status code 200' do
+                                expect(response).to have_http_status(200)
+                        end
+		end
+
+		context 'when a parameter is missing' do
+			let(:record) {{length:48,width:14,height:12}}
+			it 'returns status code 404' do
+				expect(response).to have_http_status(404)
+			end
+		end
+	end
 
 	# test POST /products 
 	describe 'POST /products' do
@@ -75,7 +101,7 @@ RSpec.describe 'Products API',type: :request do
 			end
 
 			it 'returns a validation failure message' do
-				expect(response.body).to match(/Validation Failed/)
+				expect(response.body).to match(/Missing/i)
 			end
 		end
 	end

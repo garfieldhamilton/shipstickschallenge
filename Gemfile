@@ -43,6 +43,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # add rspec for testing
   gem 'rspec-rails', '~> 3.5'
+
+  gem 'simplecov', require: false, group: :test
   
   
 end

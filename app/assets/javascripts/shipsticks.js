@@ -2,8 +2,8 @@
 
 	ShipSticks = function(){
 		this.initialized=false;
-
-
+		this.calculator_input_started=false;
+		this.timerID=-1;
 
 	};
 	
@@ -24,10 +24,26 @@
 		$('.calculator-modal').modal({
 			show: true
 		});
-		$('.calculator-modal').on('click','.calculate-button',this.OnCalculateButtonClick.bind(this));
+		
+		$('.calculate-button').on('click',this.OnCalculateButtonClick.bind(this));
+		$('.calculator-input').on('focus',this.OnCalculatorInputStarted.bind(this));
 	}
+
+	ShipSticks.prototype.OnCalculatorInputStarted = function()
+	{
+		this.calculator_input_started = true;
+		if(this.timerID != -1){ 
+			clearTimeout(this.timerID); 
+			this.timerID=-1; 
+			console.log('stopped the timer');
+		}
+		console.log('calculator input started');
+	}
+
 	ShipSticks.prototype.OnCalculateButtonClick = function()
 	{
+		this.calculator_input_started = false;
+
 		var length_value = parseInt($('#input-length').val());
 		if(length_value==undefined || length_value==0 || isNaN(length_value)){
 			$('.calculator-alert').removeClass('hidden').html("Please enter a valid length");
@@ -54,6 +70,7 @@
 			.attr('src','https://s3.amazonaws.com/shipsticks-challenge/wait22trans.gif');
 		$('.calculator-selection').html(img);
 
+		var prShipSticks = this;
 
 		$.getJSON('/products', {
 				length: length_value,
@@ -80,8 +97,22 @@
 
 				localStorage.setItem('selected-packaging',JSON.stringify(product));
 
-				setTimeout(function(){
-					$('.calculator-modal').modal('hide');
+				console.log('started the timer');
+				prShipSticks.timerID = setTimeout(function()
+				{
+					prShipSticks.timerID=-1;
+					if(!prShipSticks.calculator_input_started)
+					{
+						$('.calculator-input').val('');
+						$('.calculator-selection').html('');
+
+						$('.calculator-modal').modal('hide');
+						$('.calculator-modal').modal('dispose');
+						$('.calculator-input').off('focus');
+						$('.calculator-button').off('click');
+				
+		     				console.log('closed dialog, unhooked callbacks');
+					}
 				},5000);
 			})
 			.fail(function(jqxhr,textStatus,error){
