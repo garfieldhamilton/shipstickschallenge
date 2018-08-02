@@ -25,7 +25,11 @@
 			show: true
 		});
 		
+		$('.calculate-button').off('click');
 		$('.calculate-button').on('click',this.OnCalculateButtonClick.bind(this));
+
+		
+		$('.calculator-input').off('focus');
 		$('.calculator-input').on('focus',this.OnCalculatorInputStarted.bind(this));
 	}
 
@@ -107,9 +111,12 @@
 						$('.calculator-selection').html('');
 
 						$('.calculator-modal').modal('hide');
+						$('.calculator-modal').unbind();
 						$('.calculator-modal').modal('dispose');
-						$('.calculator-input').off('focus');
-						$('.calculator-button').off('click');
+
+
+						//$('.calculator-input').off('focus');
+						//$('.calculator-button').off('click');
 				
 		     				console.log('closed dialog, unhooked callbacks');
 					}
