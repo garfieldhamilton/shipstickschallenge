@@ -14,6 +14,7 @@ if(File.exists? product_file_path)
 			products.each do |product|
 
 
+					Rails.logger.debug sprintf("SAVING PRODUCT: %s",product.to_json)
 				#dbproduct = Product.find_by(name: product["name"])
 				
 				#if(dbproduct.nil?)
@@ -27,7 +28,7 @@ if(File.exists? product_file_path)
 					})
 					dbproduct.save
 
-					Rails.logger.debug sprintf("SAVING PRODUCT: %s",product.to_json)
+					Rails.logger.debug sprintf("SAVED PRODUCT: %s",product.to_json)
 				#else
 				#	Rails.logger.debug sprintf("PRODUCT EXISTS: %s",dbproduct.to_json);
 				#end
