@@ -8,12 +8,15 @@ if(File.exists? product_file_path)
 	if(!product_set.nil?)
 		products = product_set["products"]
 		if(!products.nil?)
+
+			Product.delete_all
+
 			products.each do |product|
 
 
-				dbproduct = Product.find_by(name: product["name"])
+				#dbproduct = Product.find_by(name: product["name"])
 				
-				if(dbproduct.nil?)
+				#if(dbproduct.nil?)
 					dbproduct = Product.new({
 						name: 	product["name"],
 						type: 	product["type"],
@@ -25,9 +28,9 @@ if(File.exists? product_file_path)
 					dbproduct.save
 
 					Rails.logger.debug sprintf("SAVING PRODUCT: %s",product.to_json)
-				else
-					Rails.logger.debug sprintf("PRODUCT EXISTS: %s",dbproduct.to_json);
-				end
+				#else
+				#	Rails.logger.debug sprintf("PRODUCT EXISTS: %s",dbproduct.to_json);
+				#end
 			end
 		end
 	end	
